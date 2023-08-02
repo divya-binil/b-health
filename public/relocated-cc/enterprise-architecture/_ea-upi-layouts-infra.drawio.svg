@@ -1,0 +1,333 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="766px" height="706px" viewBox="-0.5 -0.5 766 706" content="&lt;mxfile&gt;&lt;diagram id=&quot;NfAwWhToavkZRfyX4bwx&quot; name=&quot;Page-1&quot;&gt;1Zltb5s6FMc/TaTuSp0gBJK8bJJlndQ7Tcumaa8mB5zEt8amxpRmn37HYPMQM63dbQpNpADHxg+/c/j74Iy8ZfzwXqDk8C+PMB2Nnehh5K1G47HrBFM4KMuxtEwdvzTsBYl0pdqwIT+xuVNbMxLhtFVRck4lSdrGkDOGQ9myISF43q6247Tda4L22DJsQkRt6zcSyUNpnflObb/GZH8wPbuOLomRqawN6QFFPG+YvHcjbyk4l+VZ/LDEVMEzXMr71r8prQYmMJOPueGOzbPk7hO7+u/HanVcfmccrS91K/eIZnrCm5vVpuApMByWG3VBGPxcZ3sOh5zAvKBg9RF+LxiMfuxQDsDe6GnKo2EneMYirLp3Rt4iPxCJNwkKVWkO0QK2g4wpXLlwak/HjA0LiR8aJj2995jHWIojVNGlM01ah9p4oq/z2nGu8cah4bRA25COlX3Vco0TTjTRJ9AdP57uP29RKsUp4J6Bek6bqNs7Ue9vifJMDhRqJXW9QZ1YUG9Ur4ywPZg/YxTK4VOc903Rtyl+g5acMj6HTc+b9k0vsOhZkGABTdRpmAl6XAgU3mL5Z1o1WnW1oyS5fj6OE+8kCmc2xy6M7tk4Tjs4BlRxInCyVycdD3dZAzqsKtkh62RpeY+pvjV1E6ElotFQVQgzhASBbAXSs+sz7ifB0FRj1oO/jKJvNp+7PNa7l/z50Lw0t7y0gLwd0guY/avJ5ly/jdV3+sZqMp+/5Dqc9dRC2/t66trvHl8QoTlh0euJWG88uIi1X0BqrAGKFQO2TdXhhaJ3RyhdcspFca+3m4U4DMGuerrFjZLtzJ/4zpkc03+82y8x+s3wsnKMWSjXWdHeCqdkr/yyOaYSx3ByYS2V1mIc4XuV0MToVjl3h3Ms1CVJJVjS7pXZXmLfVB0JY2oKnz3kMorWAsU45+K2fkxDzu7Bj4QzNawLPbycFDPUozSj+0OvXw44VtUv7e4hWCRBxc6egZZqaO2g75NgQ98eA9AaWP1QtqB25lpPBm0G9/XDKyJ8oksgDrItPoiqocIrGdCCTryFkhASInqlC2ISRer2hYBZ/UTboiklQgknTBYi4C9G/kq1lUmelvu/bpd+BcWnQ/F89VV2zmTDXn6e6b1h7Lf0LvAtuZt0yd38bHJn7zZ0ZE460R9YchT0vovo2rsNHfQu9Hutt+5/a/uU4fQlNw3tnMfoRZog1gIT3GXq/4yFkopLrQ5XUIPindYZXcGojNS6mJG3IY8bOlQ2XclTSwNfLpva4aA7m4qm861zpmzqRR8QO2+yCJ5n483i00Hx94J88jxMOrYIuohVxv+DzNbej1imCQ4luVfCcYOOEI5qCf7AdkJFaRbKrNCUFFNVjbMhLa6MM3wS+9okuETFaL3V3Hkez3knW3D+zF5Lq8Buus57uufgsv5/tShr/EvtvfsF&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="0" y="175" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 205px; margin-left: 1px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                SLDS core CSS in Hugo with CDN (not local)
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="60" y="209" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    SLDS core CSS in Hug...
+                </text>
+            </switch>
+        </g>
+        <rect x="220" y="75" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 105px; margin-left: 221px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                SLDS core CSS in *.astro with CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="280" y="109" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    SLDS core CSS in *.a...
+                </text>
+            </switch>
+        </g>
+        <rect x="220" y="145" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 175px; margin-left: 221px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                SLDS core CSS in *.astro without CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="280" y="179" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    SLDS core CSS in *.a...
+                </text>
+            </switch>
+        </g>
+        <rect x="220" y="225" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 255px; margin-left: 221px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Lightning React without CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="280" y="259" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Lightning React with...
+                </text>
+            </switch>
+        </g>
+        <rect x="220" y="305" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 335px; margin-left: 221px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                LWC LDS without CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="280" y="339" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    LWC LDS without CDN
+                </text>
+            </switch>
+        </g>
+        <path d="M 370 215 L 365 215 Q 360 215 360 225 L 360 285 Q 360 295 355 295 L 352.5 295 Q 350 295 355 295 L 357.5 295 Q 360 295 360 305 L 360 365 Q 360 375 365 375 L 370 375" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="translate(360,0)scale(-1,1)translate(-360,0)" pointer-events="all"/>
+        <rect x="380" y="225" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 255px; margin-left: 381px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <i>
+                                    Lightning React
+                                </i>
+                                without CDN using
+                                <b>
+                                    preact
+                                </b>
+                                as library
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="440" y="259" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Lightning React with...
+                </text>
+            </switch>
+        </g>
+        <rect x="510" y="225" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 255px; margin-left: 511px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <i>
+                                    Lightning React
+                                </i>
+                                without CDN using
+                                <b>
+                                    React SSR
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="570" y="259" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Lightning React with...
+                </text>
+            </switch>
+        </g>
+        <rect x="70" y="435" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 465px; margin-left: 71px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Bootstrap core CSS in *.astro with CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="130" y="469" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Bootstrap core CSS i...
+                </text>
+            </switch>
+        </g>
+        <rect x="70" y="505" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 535px; margin-left: 71px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Bootstrap core CSS in *.astro without CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="130" y="539" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Bootstrap core CSS i...
+                </text>
+            </switch>
+        </g>
+        <rect x="240" y="435" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 465px; margin-left: 241px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Tailwind core CSS in *.astro with CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="300" y="469" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Tailwind core CSS in...
+                </text>
+            </switch>
+        </g>
+        <rect x="240" y="505" width="120" height="60" fill="#f8cecc" stroke="#b85450" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 535px; margin-left: 241px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Tailwind core CSS in *.astro without CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="300" y="539" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Tailwind core CSS in...
+                </text>
+            </switch>
+        </g>
+        <rect x="345" y="0" width="420" height="90" fill="#f5f5f5" stroke="#666666" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 45px; margin-left: 555px;">
+                        <div data-drawio-colors="color: #333333; " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(51, 51, 51); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                SLDS -&gt; Full Design System (
+                                <b>
+                                    <i>
+                                        devs make fewer mistakes
+                                    </i>
+                                </b>
+                                )
+                                <br/>
+                                Bootstrap -&gt; CSS Framework with conventions (devs will make mistakes)
+                                <br/>
+                                Bootstrap Theme --&gt; partial design system (
+                                <b>
+                                    <i>
+                                        devs make fewer mistakes
+                                    </i>
+                                </b>
+                                )
+                                <br/>
+                                Tailwind -&gt; CSS Framework
+                                <i>
+                                    without conventions
+                                </i>
+                                (devs will make mistakes)
+                                <br/>
+                                TailwindUI --&gt; partial design system (
+                                <b>
+                                    <i>
+                                        devs make fewer mistakes
+                                    </i>
+                                </b>
+                                )
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="555" y="49" fill="#333333" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    SLDS -&gt; Full Design System (devs make fewer mistakes)...
+                </text>
+            </switch>
+        </g>
+        <rect x="70" y="575" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 605px; margin-left: 71px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Bootstrap core React
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="130" y="609" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Bootstrap core React
+                </text>
+            </switch>
+        </g>
+        <rect x="70" y="645" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 675px; margin-left: 71px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Bootstrap core (preact?)
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="130" y="679" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Bootstrap core (prea...
+                </text>
+            </switch>
+        </g>
+        <rect x="240" y="575" width="120" height="60" fill="#ffe6cc" stroke="#d79b00" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 605px; margin-left: 241px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                <span style="text-align: left;">
+                                    tailwindui.com
+                                </span>
+                                in *.astro without CDN
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="300" y="609" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    tailwindui.com in *....
+                </text>
+            </switch>
+        </g>
+        <path d="M 390 425 L 385 425 Q 380 425 380 435 L 380 525 Q 380 535 375 535 L 372.5 535 Q 370 535 375 535 L 377.5 535 Q 380 535 380 545 L 380 635 Q 380 645 385 645 L 390 645" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="translate(380,0)scale(-1,1)translate(-380,0)" pointer-events="all"/>
+        <rect x="280" y="520" width="260" height="30" fill="none" stroke="none" transform="rotate(90,410,535)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)rotate(90 410 535)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 535px; margin-left: 410px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">
+                                Netspective Layouts Infrastructure selection
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="410" y="539" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Netspective Layouts Infrastructure selection
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>

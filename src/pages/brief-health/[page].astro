@@ -1,0 +1,141 @@
+---
+import { getCollection } from "astro:content";
+import { route, routes } from "../../lib/native/route";
+import Layout from "../../layouts/ds/tailwind/BriefHealthListing.astro";
+import { briefHealthNavigationTree } from "../../content/brief-health/_collection";
+import { getFormattedDate } from "../../components/native/blog/prime/lib";
+import SocialShare from "../../components/SocialShare";
+
+interface BriefHealthEntry {
+  data: {
+    aliases: string;
+    featuredImage: {
+      href: string;
+    };
+    title: string;
+    description: string;
+    date: string;
+    categories: string;
+    slug: string;
+    // Add other properties if applicable
+  };
+  //content: string;
+  // Add other properties if applicable
+}
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: any;
+}): Promise<any> {
+  const briefHealthEntries = await getCollection("brief-health");
+  return paginate(briefHealthEntries, { pageSize: 12 });
+}
+const exploreTree = await briefHealthNavigationTree();
+
+const { page } = Astro.props;
+const r = routes(Astro, Astro.props.route);
+---
+
+<style>
+  .container {
+    max-width: revert;
+  }
+</style>
+<Layout
+  title=""
+  route={route(Astro, {
+    originFsPath: "src/pages/brief-health/index.astro",
+    pathTree: exploreTree,
+  })}
+>
+  <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8 mt-6">
+    {
+      page.data.map((briefHealthEntry: BriefHealthEntry) => (
+        <div class="bg-white rounded-xl shadow-md overflow-hidden md:max-w-full mb-5">
+          <div class="md:flex">
+            <div class="md:shrink-0">
+              <a
+                href={`https://www.medigy.com${briefHealthEntry.data.aliases}`}
+              >
+                <img
+  class="h-48 w-full object-cover md:h-full md:w-48"
+  src={
+    r.uaAssetURL.brand(
+      `/brief-health/${
+        briefHealthEntry.data.featuredImage ? briefHealthEntry.data.featuredImage.href : ''
+      }`,
+    )
+  }
+  alt=""
+/>
+              </a>
+            </div>
+            <div class="py-5 px-7 text-black">
+              <h2 class="text-xl md:text-2xl font-medium mb-2">
+                <a
+                  href={`https://www.medigy.com${briefHealthEntry.data.aliases}`}
+                  class="block text-black"
+                >
+                  {briefHealthEntry.data.title}
+                </a>
+              </h2>
+              <p class="mb-2">{briefHealthEntry.data.description}</p>
+              <aside class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2 items-center">
+                <div class="col-span-1 text-xs">
+                  Posted{" "}
+                  <time datetime="2023-01-28">
+                    {getFormattedDate(briefHealthEntry.data.date)}
+                  </time>
+                </div>
+                <SocialShare
+                  client:only="react"
+                  slugValue={briefHealthEntry.data.slug}
+                />
+              </aside>
+              <div class="text-xs">
+                <a href="#." class="block text-black">
+                  {" "}
+                  {briefHealthEntry.data.categories}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    <div class="text-center mb-3">
+      {
+        page.url.prev && page.currentPage != 2 ? (
+          <a
+            href={`${page.url.prev}`}
+            class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 mr-2"
+          >
+            Previous
+          </a>
+        ) : null
+      }
+
+      {
+        page.url.prev && page.currentPage == 2 ? (
+          <a
+            href={`/brief-health`}
+            class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 mr-2"
+          >
+            Previous
+          </a>
+        ) : null
+      }
+
+      {
+        page.url.next ? (
+          <a
+            href={`${page.url.next}`}
+            class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 mr-2"
+          >
+            Next
+          </a>
+        ) : null
+      }
+    </div>
+  </div>
+</Layout>

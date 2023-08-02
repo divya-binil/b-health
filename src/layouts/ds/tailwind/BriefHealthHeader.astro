@@ -1,0 +1,51 @@
+---
+import Modal from "../../../components/brief-health/Modal.astro"
+---
+<nav class="shadow">
+  <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
+    <div class="flex h-16 justify-left">
+      <div class="flex px-2 lg:px-0">
+        <div class="flex flex-shrink-0 items-center">
+          <img class="block h-10 w-auto lg:hidden" src="https://www.brief.health/img/logo.png" alt="Your Company">
+          <img class="hidden h-10 w-auto lg:block" src="https://www.brief.health/img/logo.png" alt="Your Company">
+        </div>
+      </div>
+      <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
+        <div class="w-full max-w-lg lg:max-w-xs">
+          <label for="search" class="sr-only">Search</label>
+          <div class="relative">
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+              <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <input id="searchInput"  name="search" class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search" type="search">
+          </div>
+        </div>
+      </div>
+      <div class="menu mt-5" data-modal-target="large-modal" data-modal-toggle="large-modal" >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8 mt-2 pb-4">
+    <article class="grid grid-cols-1">
+        <div class="col-span-1 md:col-span-1 text-left flex justify-end">
+          <div class="flex max-w-3xl px-4 sm:px-6">
+            <div class="flex-shrink-0">
+              <img class="h-12 w-12 rounded-full" src="https://www.medigy.com/images/shahid-sha.png" alt="Shahid Sha">
+            </div>
+            <div class="ml-3">
+              <div>Published by</div>
+              <div class="text-blue-600"><a href="http://shahidshah.com/" target="_blank" title="Link to shahidshah.com">@ShahidNShah</a></div>
+            </div>
+          </div>
+      </div>
+      </article>
+  </div>
+</nav>
+<!-- Render the modal component -->
+<Modal  />
+

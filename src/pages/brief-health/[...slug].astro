@@ -1,0 +1,88 @@
+---
+import Layout from "../../layouts/ds/tailwind/BriefHealthListing.astro";
+import { route } from "../../lib/native/route";
+import { getCollection } from "astro:content";
+//import LoginVerify from "../../components/native/authentication/iam/LoginRedirect";
+
+export const briefHealthCollection = "brief-health" as const; // export required because Astro needs it in getStaticPaths()
+export const briefHealthEntries = await getCollection<typeof briefHealthCollection>(briefHealthCollection);
+export async function getStaticPaths() {
+  return briefHealthEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const r = route(Astro, { originFsPath: "src/pages/brief-health/[...slug].astro" }, { entry: {collection: briefHealthCollection, entry } });
+//const envData = import.meta.env;
+
+
+
+---
+<style>
+  .container {
+      max-width: revert;
+  }
+</style>
+<!-- { (entry.data.authenticationRequired != false)?<LoginVerify client:only="react" envInfo={envData}><span style="display:none;">""</span></LoginVerify>:""} -->
+<Layout title={entry.data.title} heading="" route={r}>
+  <div class="relative isolate overflow-hidden bg-gray-900 px-6 pt-14 lg:px-8 rounded-lg">
+    <img src="https://images.unsplash.com/photo-1658487476847-a180f98870d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
+    <div class="mx-auto max-w-7xl py-10 sm:py-2">
+      <div class="mx-auto max-w-6xl text-center">
+        <div class="bg-blue-900 bg-opacity-60 py-2 rounded-lg">
+          <h2 class="text-4xl font-normal tracking-tight text-white sm:text-3xl">Brief Health Deatil page</h2>
+        </div>
+        <p class="mt-4 text-lg leading-8 text-gray-300">&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto py-6 mt-6 overflow-hidden bg-white rounded-lg ring-1 ring-slate-900/10">
+    <div class="flex flex-wrap mx-6">
+      <div class="border-l-4 border-yellow-400 bg-yellow-50 p-4">
+        <div class="flex">
+          <div class="flex-shrink-0">
+            <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="ml-3">
+            <p class="text-sm text-yellow-700">
+              This microsite is a preview / editing area for content creators to maintain this public microsite: <a href="https://www.medigy.com/research-ontology/hdo-il-ontology"><b>medigy.com/research-ontology/hdo-il-ontology</b></a>.
+      As of February 22, 2023 the contents are published as Hugo-compatible <code>*.md</code> files at <a href={`../legacy-hugo/${entry.slug}.md`}><code>legacy-hugo/{entry.slug}.md</code></a>
+      and available in the <code>dist/www.medigy.com-hdo-ilo/legacy-hugo</code> directory when this site is published.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto py-6">
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-1/4 px-4">
+          <nav class="space-y-1" aria-label="Sidebar">
+            <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+
+            {briefHealthEntries.map(e => e.slug == entry.slug
+              // ../slug/ is used because of pretty URLs
+              ? <a href={`../${e.slug}/`} class="bg-gray-100 text-gray-900 flex items-center px-3 py-2 text-sm font-medium rounded-md" aria-current="page">
+                  <span class="truncate">{e.data.title}</span>
+                </a>
+              : <a href={`../${e.slug}/`} class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 flex items-center px-3 py-2 text-sm font-medium rounded-md">
+                  <span class="truncate">{e.data.title}</span>
+                </a>)}
+          </nav>
+        </div>
+        <div class="w-full lg:w-3/4 px-4">
+          {entry.data.title}
+          <article class="prose max-w-screen-xl">
+            <Content />
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

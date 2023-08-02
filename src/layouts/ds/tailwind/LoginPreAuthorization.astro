@@ -1,0 +1,48 @@
+---
+// use the following TailwindCSS UI libraries:
+// - https://tailwindui.com/
+// - https://www.hyperui.dev/
+// export interface Props {
+//   readonly title?: string;
+//   readonly socialImage?: string;
+// }
+// const {  title, socialImage } = Astro.props;
+const title = "Login Pre Authorization";
+const socialImage = "https://precision-knowledge-content.pages.git.netspective.io/knowledge-center/assets-natural/brand/netspective/knowledge-center/knowledge-center-logo-full-165x104.png";
+
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-gray-100">
+  <head>
+    <meta name="description" content={title}/>
+    <meta property="og:title" content={title}/>
+    <meta property="og:url" content={Astro.url}/>
+    <meta property="og:image" content={socialImage}/>
+    <meta property="og:description" content={title}>
+    <meta property="og:locale" content="en_US" /> 
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image"/>   
+    <meta name="twitter:title" content={title}/>
+    <meta name="twitter:description" content={title}/>
+    <meta name="twitter:image" content={socialImage}/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="canonical" href={Astro.url}/>
+    <script type="text/javascript" src="/assets/native/js/fingerprint.js" ></script>
+    <script type="text/javascript" src="/assets/native/js/open-telemetry.js" ></script>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://precision-knowledge-content.pages.git.netspective.io/knowledge-center/netspective/knowledge-center/knowledge-center-favicon.png"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="" >
+
+    <slot />
+
+  </body>
+</html>
+  
