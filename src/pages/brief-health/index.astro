@@ -34,6 +34,8 @@ const exploreTree = await briefHealthNavigationTree();
 let briefHealthEntriesInitial = await getCollection("brief-health");
 const briefHealthEntries = briefHealthEntriesInitial.slice(0, 12);
 
+console.log(briefHealthEntries)
+
 //const { route } = Astro.props;
 const r = routes(Astro, Astro.props.route);
 
@@ -87,7 +89,7 @@ const r = routes(Astro, Astro.props.route);
                   {briefHealthEntry.data.title}
                 </a>
               </h2>
-              <p class="mb-2">{briefHealthEntry.data.description}</p>
+            <p class="mb-2">{briefHealthEntry.body.slice(0, 150)}{briefHealthEntry.body.length > 150 ? '...' : ''}</p>
               <aside class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2 items-center">
                 <div class="col-span-1 text-xs">
                   Posted{" "}
