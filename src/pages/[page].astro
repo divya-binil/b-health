@@ -1,40 +1,38 @@
 ---
-import Layout from "../../layouts/ds/tailwind/BriefHealthListing.astro";
-import { route, routes } from "../../lib/native/route";
-import { getFormattedDate } from "../../components/native/lib";
-import { briefHealthNavigationTree } from "../../content/brief-health/_collection";
-import { CollectionEntry, getCollection } from "astro:content";
-import type { PathTree, PathTreeNode } from "../../lib/universal/tree";
-import type { IntermediateRouteUnit } from "../../governance/information-model/route";
-import SocialShare from "../../components/SocialShare";
-const treeNodeHTML = (
-  tree: PathTree<CollectionEntry<"brief-health">, IntermediateRouteUnit>,
-  node?: PathTreeNode<CollectionEntry<"brief-health">, IntermediateRouteUnit>,
-): string[] => {
-  return (node ?? tree).children.map(
-    (child) => `
-    <li class="text-sm font-medium pl-0 ml-0 mt-0 mb-0" style="margin: 0 0">
-      ${
-        child.terminal
-          ? `<a href="${child.terminal?.slug}/" style="text-decoration:none;margin-bottom:.25em;" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 flex items-center px-3 py-2 mt-0 mb-0 text-sm font-medium rounded-md">${child.terminal?.data.title}</a>`
-          : child.unit
-      }
-      ${
-        child.children.length > 0
-          ? `
-        <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
-          ${treeNodeHTML(tree, child).join("\n")}
-        </ul>`
-          : ""
-      }
-    </li>`,
-  );
-};
+import { getCollection } from "astro:content";
+import { route, routes } from "../lib/native/route";
+import Layout from "../layouts/ds/tailwind/BriefHealthListing.astro";
+import { briefHealthNavigationTree } from "../content/brief-health/_collection";
+import { getFormattedDate } from "../components/native/lib";
+import SocialShare from "../components/SocialShare";
+interface BriefHealthEntry {
+[x: string]: unknown;
+  data: {
+    aliases: string;
+    featuredImage: {
+      href: string;
+    };
+    title: string;
+    description: string;
+    date: string;
+    categories: string;
+    slug: string;
+  };
+}
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: any;
+}): Promise<any> {
+  const briefHealthEntries = await getCollection("brief-health");
+  return paginate(briefHealthEntries, { pageSize: 12 });
+}
 const exploreTree = await briefHealthNavigationTree();
-let briefHealthEntriesInitial = await getCollection("brief-health");
-const briefHealthEntries = briefHealthEntriesInitial.slice(0, 12);
+
+const { page } = Astro.props;
 const r = routes(Astro, Astro.props.route);
 ---
+
 <style>
   .container {
     max-width: revert;
@@ -49,15 +47,15 @@ const r = routes(Astro, Astro.props.route);
 >
   <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8 mt-6">
     {
-      briefHealthEntries.map((briefHealthEntry) => (
+      page.data.map((briefHealthEntry: BriefHealthEntry) => (
         <div class="bg-white rounded-xl shadow-md overflow-hidden md:max-w-full mb-5">
           <div class="md:flex">
             <div class="md:shrink-0">
               <a
                 href={`https://www.medigy.com${briefHealthEntry.data.aliases}`}
               >
-                <img
-  class="h-48 w-full object-cover md:h-full md:w-48"
+              <img
+class="h-48 w-full object-cover md:h-full md:w-48"
   src={
     r.uaAssetURL.brand(
       `/brief-health/${
@@ -66,6 +64,7 @@ const r = routes(Astro, Astro.props.route);
     )
   }
   alt=""
+  
 />
               </a>
             </div>
@@ -79,6 +78,8 @@ const r = routes(Astro, Astro.props.route);
                 </a>
               </h2>
               <p class="mb-2">{briefHealthEntry.body.split('.').slice(0, 2).join('.')}</p>
+
+
               <aside class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2 items-center">
                 <div class="col-span-1 text-xs">
                   Posted{" "}
@@ -88,7 +89,7 @@ const r = routes(Astro, Astro.props.route);
                 </div>
                 <SocialShare
                   client:only="react"
-                  slugValue={briefHealthEntry.slug}
+                  slugValue={briefHealthEntry.data.slug}
                 />
               </aside>
               <div class="text-xs">
@@ -102,17 +103,38 @@ const r = routes(Astro, Astro.props.route);
         </div>
       ))
     }
-
     <div class="text-center mb-3">
       {
-        (
+        page.url.prev && page.currentPage != 2 ? (
           <a
-            href={`/brief-health/2`}
+            href={`${page.url.prev}`}
+            class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 mr-2"
+          >
+            Previous
+          </a>
+        ) : null
+      }
+
+      {
+        page.url.prev && page.currentPage == 2 ? (
+          <a
+            href={`/`}
+            class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 mr-2"
+          >
+            Previous
+          </a>
+        ) : null
+      }
+
+      {
+        page.url.next ? (
+          <a
+            href={`${page.url.next}`}
             class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 mr-2"
           >
             Next
           </a>
-        )
+        ) : null
       }
     </div>
   </div>

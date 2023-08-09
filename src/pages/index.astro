@@ -1,39 +1,41 @@
 ---
-import Layout from "../../layouts/ds/tailwind/BriefHealthListing.astro";
-import { route, routes } from "../../lib/native/route";
-import { getFormattedDate } from "../../components/native/lib";
-import { briefHealthNavigationTree } from "../../content/brief-health/_collection";
+import Layout from "../layouts/ds/tailwind/BriefHealthListing.astro";
+import { route, routes } from "../lib/native/route";
+import { getFormattedDate } from "../components/native/lib";
+import { briefHealthNavigationTree } from "../content/brief-health/_collection";
 import { CollectionEntry, getCollection } from "astro:content";
-import type { PathTree, PathTreeNode } from "../../lib/universal/tree";
-import type { IntermediateRouteUnit } from "../../governance/information-model/route";
-import SocialShare from "../../components/SocialShare";
-const treeNodeHTML = (
-  tree: PathTree<CollectionEntry<"brief-health">, IntermediateRouteUnit>,
-  node?: PathTreeNode<CollectionEntry<"brief-health">, IntermediateRouteUnit>,
-): string[] => {
-  return (node ?? tree).children.map(
-    (child) => `
-    <li class="text-sm font-medium pl-0 ml-0 mt-0 mb-0" style="margin: 0 0">
-      ${
-        child.terminal
-          ? `<a href="${child.terminal?.slug}/" style="text-decoration:none;margin-bottom:.25em;" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 flex items-center px-3 py-2 mt-0 mb-0 text-sm font-medium rounded-md">${child.terminal?.data.title}</a>`
-          : child.unit
-      }
-      ${
-        child.children.length > 0
-          ? `
-        <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
-          ${treeNodeHTML(tree, child).join("\n")}
-        </ul>`
-          : ""
-      }
-    </li>`,
-  );
-};
+import type { PathTree, PathTreeNode } from "../lib/universal/tree";
+import type { IntermediateRouteUnit } from "../governance/information-model/route";
+import SocialShare from "../components/SocialShare";
+// const treeNodeHTML = (
+//   tree: PathTree<CollectionEntry<"brief-health">, IntermediateRouteUnit>,
+//   node?: PathTreeNode<CollectionEntry<"brief-health">, IntermediateRouteUnit>,
+// ): string[] => {
+//   return (node ?? tree).children.map(
+//     (child) => `
+//     <li class="text-sm font-medium pl-0 ml-0 mt-0 mb-0" style="margin: 0 0">
+//       ${
+//         child.terminal
+//           ? `<a href="${child.terminal?.slug}/" style="text-decoration:none;margin-bottom:.25em;" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 flex items-center px-3 py-2 mt-0 mb-0 text-sm font-medium rounded-md">${child.terminal?.data.title}</a>`
+//           : child.unit
+//       }
+//       ${
+//         child.children.length > 0
+//           ? `
+//         <ul class="max-w space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+//           ${treeNodeHTML(tree, child).join("\n")}
+//         </ul>`
+//           : ""
+//       }
+//     </li>`,
+//   );
+// };
 const exploreTree = await briefHealthNavigationTree();
 let briefHealthEntriesInitial = await getCollection("brief-health");
 const briefHealthEntries = briefHealthEntriesInitial.slice(0, 12);
 const r = routes(Astro, Astro.props.route);
+
+
 ---
 <style>
   .container {
@@ -107,7 +109,7 @@ const r = routes(Astro, Astro.props.route);
       {
         (
           <a
-            href={`/brief-health/2`}
+            href={`/2`}
             class="rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 mr-2"
           >
             Next

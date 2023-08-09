@@ -2,7 +2,6 @@
 import Layout from "../../layouts/ds/tailwind/BriefHealthListing.astro";
 import { route } from "../../lib/native/route";
 import { getCollection } from "astro:content";
-//import LoginVerify from "../../components/native/authentication/iam/LoginRedirect";
 
 export const briefHealthCollection = "brief-health" as const; // export required because Astro needs it in getStaticPaths()
 export const briefHealthEntries = await getCollection<typeof briefHealthCollection>(briefHealthCollection);
@@ -12,22 +11,15 @@ export async function getStaticPaths() {
   }));
 }
 
-
-
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const r = route(Astro, { originFsPath: "src/pages/brief-health/[...slug].astro" }, { entry: {collection: briefHealthCollection, entry } });
-//const envData = import.meta.env;
-
-
-
 ---
 <style>
   .container {
       max-width: revert;
   }
 </style>
-<!-- { (entry.data.authenticationRequired != false)?<LoginVerify client:only="react" envInfo={envData}><span style="display:none;">""</span></LoginVerify>:""} -->
 <Layout title={entry.data.title} heading="" route={r}>
   <div class="relative isolate overflow-hidden bg-gray-900 px-6 pt-14 lg:px-8 rounded-lg">
     <img src="https://images.unsplash.com/photo-1658487476847-a180f98870d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80" alt="" class="absolute inset-0 -z-10 h-full w-full object-cover">
@@ -64,10 +56,7 @@ const r = route(Astro, { originFsPath: "src/pages/brief-health/[...slug].astro" 
       <div class="flex flex-wrap">
         <div class="w-full lg:w-1/4 px-4">
           <nav class="space-y-1" aria-label="Sidebar">
-            <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-
             {briefHealthEntries.map(e => e.slug == entry.slug
-              // ../slug/ is used because of pretty URLs
               ? <a href={`../${e.slug}/`} class="bg-gray-100 text-gray-900 flex items-center px-3 py-2 text-sm font-medium rounded-md" aria-current="page">
                   <span class="truncate">{e.data.title}</span>
                 </a>

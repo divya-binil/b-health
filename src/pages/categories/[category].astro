@@ -1,0 +1,121 @@
+---
+import Layout from "../../layouts/ds/tailwind/BriefHealthListing.astro";
+import { route, routes } from "../../lib/native/route";
+import { getFormattedDate } from "../../components/native/lib";
+import { briefHealthNavigationTree } from "../../content/brief-health/_collection";
+import { CollectionEntry, getCollection } from "astro:content";
+import type { PathTree, PathTreeNode } from "../../lib/universal/tree";
+import type { IntermediateRouteUnit } from "../../governance/information-model/route";
+import SocialShare from "../../components/SocialShare";
+
+export function getStaticPaths() {
+  return [
+    { params: { category: 'public-health' } },
+    { params: { category: 'interoperability' } },
+    { params: { category: 'patient-portals' } },
+    { params: { category: 'oncology' } },
+    { params: { category: 'electronic-health-records-ehrs' } },
+    { params: { category: 'patient-experience' } },
+    { params: { category: 'hipaa' } },
+    // { params: { category: 'healthcare-it-news-public-health' } },
+    // { params: { category: 'himss-interoperability' } },
+    // { params: { category: 'klas-patient-portals' } },
+    // { params: { category: 'healthcare-it-news-oncology' } },
+    // { params: { category: 'frost-sullivan-electronic-health-records-ehrs' } },
+    // { params: { category: 'symplur-patient-experience' } },
+    // { params: { category: 'hipaa' } },
+  ];
+}
+
+let allPosts = await getCollection("brief-health");
+const exploreTree = await briefHealthNavigationTree();
+let briefHealthEntriesInitial = await getCollection("brief-health");
+const briefHealthEntries = briefHealthEntriesInitial.slice(0, 12);
+const r = routes(Astro, Astro.props.route);
+
+const { category } = Astro.params;
+---
+<style>
+  .container {
+    max-width: revert;
+  }
+</style>
+
+<Layout
+  title=""
+  route={route(Astro, {
+    originFsPath: "src/pages/brief-health/index.astro",
+    pathTree: exploreTree,
+  })}
+>
+  <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8 mt-6">
+    {
+      allPosts.length > 0 ? (
+        allPosts.map((post) => {
+          const categories = Array.isArray(post.data.categories)
+            ? post.data.categories
+            : [post.data.categories];
+          if (categories.includes(category)) {
+            return (
+              <div class="bg-white rounded-xl shadow-md overflow-hidden md:max-w-full mb-5">
+                <div class="md:flex">
+                  <div class="md:shrink-0">
+                    <a href={`https://www.medigy.com${post.data.aliases}`}>
+                      <img
+                        class="h-48 w-full object-cover md:h-full md:w-48"
+                        src={
+                          r.uaAssetURL.brand(
+                            `/brief-health/${
+                              post.data.featuredImage
+                                ? post.data.featuredImage.href
+                                : ''
+                            }`,
+                          )
+                        }
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="py-5 px-7 text-black">
+                    <h2 class="text-xl md:text-2xl font-medium mb-2">
+                      <a
+                        href={`https://www.medigy.com${post.data.aliases}`}
+                        class="block text-black"
+                      >
+                        {post.data.title}
+                      </a>
+                    </h2>
+                    <p class="mb-2">
+                      {post.body.split('.').slice(0, 2).join('.')}
+                    </p>
+                    <aside class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2 items-center">
+                      <div class="col-span-1 text-xs">
+                        Posted{' '}
+                        <time datetime="2023-01-28">
+                          {getFormattedDate(post.data.date)}
+                        </time>
+                      </div>
+                      <SocialShare
+                        client:only="react"
+                        slugValue={post.slug}
+                      />
+                    </aside>
+                    <div class="text-xs">
+                      <a href="#." class="block text-black">
+                        {' '}
+                        {post.data.categories}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+        })
+      ) : (
+        <p>No data</p>
+      )
+    }
+  </div>
+</Layout>
+

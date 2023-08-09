@@ -5,7 +5,6 @@ import Layout from "../../layouts/ds/tailwind/BriefHealthListing.astro";
 import { briefHealthNavigationTree } from "../../content/brief-health/_collection";
 import { getFormattedDate } from "../../components/native/lib";
 import SocialShare from "../../components/SocialShare";
-
 interface BriefHealthEntry {
 [x: string]: unknown;
   data: {
@@ -18,10 +17,7 @@ interface BriefHealthEntry {
     date: string;
     categories: string;
     slug: string;
-    // Add other properties if applicable
   };
-  //content: string;
-  // Add other properties if applicable
 }
 export async function getStaticPaths({
   paginate,
@@ -58,8 +54,8 @@ const r = routes(Astro, Astro.props.route);
               <a
                 href={`https://www.medigy.com${briefHealthEntry.data.aliases}`}
               >
-                <img
-  class="h-48 w-full object-cover md:h-full md:w-48"
+              <img
+class="h-48 w-full object-cover md:h-full md:w-48"
   src={
     r.uaAssetURL.brand(
       `/brief-health/${
@@ -68,6 +64,7 @@ const r = routes(Astro, Astro.props.route);
     )
   }
   alt=""
+  
 />
               </a>
             </div>
