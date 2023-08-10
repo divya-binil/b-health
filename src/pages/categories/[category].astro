@@ -10,20 +10,41 @@ import SocialShare from "../../components/SocialShare";
 
 export function getStaticPaths() {
   return [
-    { params: { category: 'public-health' } },
-    { params: { category: 'interoperability' } },
-    { params: { category: 'patient-portals' } },
-    { params: { category: 'oncology' } },
-    { params: { category: 'electronic-health-records-ehrs' } },
-    { params: { category: 'patient-experience' } },
-    { params: { category: 'hipaa' } },
-    // { params: { category: 'healthcare-it-news-public-health' } },
-    // { params: { category: 'himss-interoperability' } },
-    // { params: { category: 'klas-patient-portals' } },
-    // { params: { category: 'healthcare-it-news-oncology' } },
-    // { params: { category: 'frost-sullivan-electronic-health-records-ehrs' } },
-    // { params: { category: 'symplur-patient-experience' } },
-    // { params: { category: 'hipaa' } },
+    { params: { category: 'klas-remote-patient-monitoring' } },
+    { params: { category: 'frost-sullivan-artificial-intelligence' } },
+    { params: { category: 'healthcare-it-news-machine-learning' } },
+    { params: { category: 'gartner-robotic-process-automation-rpa' } },
+    { params: { category: 'frost-sullivan-electronic-health-records-ehrs' } },
+    { params: { category: 'himss-digital-health' } },
+    { params: { category: 'healthcare-it-news-patient-engagement' } },
+    { params: { category: 'symplur-patient-experience' } },
+    { params: { category: 'himss-interoperability' } },
+    { params: { category: 'gartner-pcm-patient-care-management' } },
+    { params: { category: 'klas-home-health' } },
+    { params: { category: 'healthcare-it-news-revenue-cycle-management' } },
+    { params: { category: 'klas-patient-portals' } },
+    { params: { category: 'gartner-supply-chain' } },
+    { params: { category: 'klas-claims-management' } },
+    { params: { category: 'gartner-remote-diagnostics' } },
+    { params: { category: 'healthcare-it-news-appointment-scheduling' } },
+    { params: { category: 'gartner-data-analytics' } },
+    { params: { category: 'healthcare-it-news-imaging-technology' } },
+    { params: { category: 'himss-informatics' } },
+    { params: { category: 'healthcare-it-news-cybersecurity' } },
+    { params: { category: 'healthcare-it-news-public-health' } },
+    { params: { category: 'healthcare-it-news-mobile-health-mhealth' } },
+    { params: { category: 'healthcare-it-news-mergers-acquisitions' } },
+    { params: { category: 'medigy-chronic-care-management' } },
+    { params: { category: 'healthcare-it-news-digital-transformation' } },
+    { params: { category: 'healthcare-it-news-health-information-technology-hit' } },
+    { params: { category: 'healthcare-it-news-oncology' } },
+    { params: { category: 'himss-health-and-wellness' } },
+    { params: { category: 'himss-compliance' } },
+    { params: { category: 'klas-practice-management' } },
+    { params: { category: 'symplur-virtual-care' } },
+    { params: { category: 'symplur-medical-devices' } },
+    { params: { category: 'symplur-medical-billing' } },
+    { params: { category: 'symplur-primary-care' } },
   ];
 }
 
@@ -52,10 +73,16 @@ const { category } = Astro.params;
     {
       allPosts.length > 0 ? (
         allPosts.map((post) => {
-          const categories = Array.isArray(post.data.categories)
-            ? post.data.categories
-            : [post.data.categories];
-          if (categories.includes(category)) {
+        let categories = [];
+
+        if (Array.isArray(post.data.categoryUrl)) {
+          categories = post.data.categoryUrl.map(url => url.replace('topic/', ''));
+        } else if (post.data.categoryUrl) {
+          categories = [post.data.categoryUrl.replace('topic/', '')];
+        }
+
+        if (categories.includes(category)) {
+  
             return (
               <div class="bg-white rounded-xl shadow-md overflow-hidden md:max-w-full mb-5">
                 <div class="md:flex">
@@ -85,9 +112,7 @@ const { category } = Astro.params;
                         {post.data.title}
                       </a>
                     </h2>
-                    <p class="mb-2">
-                      {post.body.split('.').slice(0, 2).join('.')}
-                    </p>
+                    <p class="mb-2">{post.data.description}</p>
                     <aside class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2 items-center">
                       <div class="col-span-1 text-xs">
                         Posted{' '}

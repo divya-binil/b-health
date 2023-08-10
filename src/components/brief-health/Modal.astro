@@ -23,8 +23,8 @@ import {categories} from "../../governance/native/briefHealth/categories";
                    {
                     categories.map((detail) => (
                       <li>
-                          <a href={`/categories/${detail.slug}`} class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-                              <span class="flex-1 ml-3 whitespace-nowrap">{detail.name}</span>
+                          <a href={`/categories/${detail.topicUrl}`} class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                              <span class="flex-1 ml-3 whitespace-nowrap">{detail.topicTitle}</span>
                           </a>
                       </li>
                       ))

@@ -47,34 +47,15 @@ import ContactForm from "../../../components/brief-health/ContactForm"
                   <option>Select</option>
                   {
                     categories.map((detail) => (
-                    <option value="option1">{detail.name}</option>
+                    <option value="option1">{detail.topicTitle}</option>
                     ))
                   }
                 </select>
               </div>
            </div>
 
-<iframe src="https://discord.com/widget?id=1136258189025882233&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        <ContactForm  client:only="react"/>
 
-
-
-          <!--
-           <div class="col-span-1 md:col-span-1 lg:col-span-1">
-            <h3 class="text-lg uppercase font-medium mb-2 text-orange-600">Contact Us</h3>
-            <div class="mt-3">
-                <input type="text" class="block w-full rounded-md border-0 py-2 px-4 placeholder:text-gray-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-700 sm:max-w-xs text-base leading-6" placeholder="Name">
-            </div>
-            <div class="mt-3">
-                <input type="text" class="block w-full rounded-md border-0 py-2 px-4 placeholder:text-gray-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-700 sm:max-w-xs text-base leading-6" placeholder="Email">
-            </div>
-            <div class="mt-3">
-                <textarea id="" name="" rows="3" class="block w-full rounded-md border-0 py-2 px-4 placeholder:text-gray-900 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-400 focus:ring-1 focus:ring-inset focus:ring-gray-700 sm:max-w-xs text-base leading-6" placeholder="Message"></textarea>
-            </div>
-            <div class="mt-3">
-                <button type="submit" class="rounded-md bg-orange-600 px-3 py-2 px-4 text-base font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">Submit</button>
-            </div>
-           </div>
-          -->
         </article>
         <article class="border-t border-gray-300 pt-6 mt-7 text-center">
             <div class="mb-3">
