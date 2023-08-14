@@ -63,7 +63,7 @@ const r = routes(Astro, Astro.props.route);
   src={
     r.uaAssetURL.brand(
       `/brief-health/${
-        briefHealthEntry.data.featuredImage ? briefHealthEntry.data.featuredImage.href : ''
+        briefHealthEntry.data.featuredImage ? briefHealthEntry.data.featuredImage.href : 'no-image-article.jpg'
       }`,
     )
   }
@@ -71,7 +71,7 @@ const r = routes(Astro, Astro.props.route);
 />
               </a>
             </div>
-            <div class="py-5 px-7 text-black">
+            <div class="py-5 px-7 text-black flex-1">
               <h2 class="text-xl md:text-2xl font-medium mb-2">
                 <a
                   href={`https://www.medigy.com${briefHealthEntry.data.aliases}`}
