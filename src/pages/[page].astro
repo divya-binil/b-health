@@ -25,6 +25,16 @@ export async function getStaticPaths({
   paginate: any;
 }): Promise<any> {
   const briefHealthEntries = await getCollection("brief-health");
+
+  
+// Sort the posts based on date in descending order (most recent first)
+briefHealthEntries.sort((postA, postB) => {
+  const dateA = new Date(postA.data.date);
+  const dateB = new Date(postB.data.date);
+  return dateB - dateA; // Compare dates in descending order
+});
+
+
   return paginate(briefHealthEntries, { pageSize: 12 });
 }
 const exploreTree = await briefHealthNavigationTree();

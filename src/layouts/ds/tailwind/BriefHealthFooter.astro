@@ -2,21 +2,26 @@
 import "../../../components/universal/TimeAgo.web.js";
 import "../../../components/universal/TimeDurationNarrative.web.js";
 //import { routes, Route, routeWsEditorTarget } from "../../../lib/native/route";
+import { getFormattedDate } from "../../../components/native/lib";
+
 import {categories} from "../../../governance/native/briefHealth/categories";
 
 import ContactForm from "../../../components/brief-health/ContactForm"
-//import Showcase from "../../../components/brief-health/Showcase.jsx"
-// export interface Props {
-//   readonly route: Route<any, any>;
-// }
+import { getCollection } from "astro:content";
+let briefHealthEntriesInitial = await getCollection("brief-health");
 
-// const { route } = Astro.props;
-//const r = routes(Astro, route);
+// Sort the posts based on date in descending order (most recent first)
+briefHealthEntriesInitial.sort((postA, postB) => {
+  const dateA = new Date(postA.data.date);
+  const dateB = new Date(postB.data.date);
+  return dateB - dateA; // Compare dates in descending order
+});
 
-// const submitButton = document.getElementById("contactSubmit");
-// submitButton.addEventListener("click", (event) => {
-//   // Do something when the user clicks on the submit button
-// });
+// Get the most recent post
+const mostRecentPost = briefHealthEntriesInitial[0];
+const secondMostRecentPost = briefHealthEntriesInitial[1];
+ // Assuming there's at least one post
+
 ---
 <!-- https://www.hyperui.dev/components/marketing/footers#component-10 -->
 
@@ -37,8 +42,29 @@ import ContactForm from "../../../components/brief-health/ContactForm"
           </div>
           <div class="col-span-1 md:col-span-1 lg:col-span-1">
             <h3 class="text-lg uppercase font-medium mb-2 text-orange-600">Recent Posts</h3>
-            <p class="mb-2 leading-5"><a href="https://www.brief.health/post/2023/01/28/mobihealthnews-brain-computer-interface-company-precision-neuroscience-scores-41m-and-more-digital-health-fundings/" class="text-gray-900 hover:text-orange-600 font-medium">Brain-computer interface company Precision Neuroscience scores $41M and more digital health fundings</a></p>
-            <p class="mb-0 text-sm text-gray-500 leading-5">January 28, 2023</p>
+
+            
+            <p class="mb-2 leading-5"><a href={`https://www.medigy.com${mostRecentPost.data.aliases}`} class="text-gray-900 hover:text-orange-600 font-medium">{mostRecentPost.data.title}</a></p>
+            <p class="mb-0 text-sm text-gray-500 leading-5">
+              <time datetime="2023-01-28">
+                    {getFormattedDate(mostRecentPost.data.date)}
+              </time>
+              </p>
+            <p class="mb-2 leading-5"><a href={`https://www.medigy.com${briefHealthEntriesInitial[1].data.aliases}`} class="text-gray-900 hover:text-orange-600 font-medium">{briefHealthEntriesInitial[1].data.title}</a></p>
+            <p class="mb-0 text-sm text-gray-500 leading-5">
+              <time datetime="2023-01-28">
+                    {getFormattedDate(briefHealthEntriesInitial[1].data.date)}
+              </time>
+              </p>
+
+               <p class="mb-2 leading-5"><a href={`https://www.medigy.com${briefHealthEntriesInitial[2].data.aliases}`} class="text-gray-900 hover:text-orange-600 font-medium">{briefHealthEntriesInitial[2].data.title}</a></p>
+            <p class="mb-0 text-sm text-gray-500 leading-5">
+              <time datetime="2023-01-28">
+                    {getFormattedDate(briefHealthEntriesInitial[2].data.date)}
+              </time>
+              </p>
+
+              
            </div>
 
         <ContactForm  client:only="react"/>
