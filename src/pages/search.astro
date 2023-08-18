@@ -1,0 +1,168 @@
+---
+import Layout from "../layouts/ds/tailwind/BriefHealthListing.astro";
+import { route, routes } from "../lib/native/route";
+import { getFormattedDate } from "../components/native/lib";
+import { briefHealthNavigationTree } from "../content/brief-health/_collection";
+import { CollectionEntry, getCollection } from "astro:content";
+import type { PathTree, PathTreeNode } from "../lib/universal/tree";
+import type { IntermediateRouteUnit } from "../governance/information-model/route";
+import SocialShare from "../components/SocialShare";
+const exploreTree = await briefHealthNavigationTree();
+const r = routes(Astro, Astro.props.route);
+---
+
+<style>
+  .container {
+    max-width: revert;
+  }
+</style>
+<Layout
+  title=""
+  route={route(Astro, {
+    originFsPath: "src/pages/brief-health/index.astro",
+    pathTree: exploreTree,
+  })}
+>
+<div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8 mt-6" id="searchResults">
+</div>
+
+<script>
+  import FUSE from "fuse.js";
+  let SEARCH_DATA;
+  let FUSE_INSTANCE;
+  const FUSE_OPTIONS = {
+    shouldSort: true,
+    threshold: 0.5,
+    //includeScore: 0,
+    keys:  [
+        {
+          name: "title",
+          weight: 1
+        },
+        // {
+        //   name: "description",
+        //   weight: 0.75
+        // },
+      ],
+    includeMatches: true,
+    //  minMatchCharLength: 2
+    // Configure exact word matching
+    // tokenize: true,      // Split the query into individual words
+    // matchAllTokens: true // Require all words to be present in the result
+  }
+  const search = document.querySelector("#search");
+  const searchReadout = document.querySelector("#searchReadout");
+  const resultsList = document.querySelector("#searchResults");
+  window.addEventListener("DOMContentLoaded", () =>{
+    const UrlParams = new URLSearchParams(window.location.search).get("q");
+    search.focus();
+    search.value = UrlParams;
+    fetchSearchResults(UrlParams);
+  })
+
+  window.addEventListener("input", () =>{
+    const searchTerm = search.value;
+    fetchSearchResults(searchTerm);
+  })
+
+  function generateSearchResults(results) {
+  return results.map((r) => {
+    const { title, slug, date, aliases, description, categories, featuredImage} = r.item;
+    const dateAsdate = new Date(date);
+
+    return `
+      <div class="bg-white rounded-xl shadow-md overflow-hidden md:max-w-full mb-5">
+        <div class="md:flex">
+          <div class="md:shrink-0">
+            <a href="https://www.medigy.com${aliases}">
+
+              <img
+                class="h-48 w-full object-cover md:h-full md:w-48"
+                src="/assets-natural/brand/brief-health/${featuredImage
+                      ? featuredImage.href
+                      : 'no-image-article.jpg'
+                  }"
+                )}"
+                alt=""
+              />
+             
+            </a>
+          </div>
+          <div class="py-5 px-7 text-black flex-1">
+            <h2 class="text-xl md:text-2xl font-medium mb-2">
+              <a href="https://www.medigy.com${aliases}" class="block text-black">
+                ${title}
+              </a>
+            </h2>
+            <p class="mb-2">${description}</p>
+            <aside class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-2 items-center">
+              <div class="col-span-1 text-xs">
+                Posted 
+                
+                 <time datetime="${dateAsdate.toISOString()}">
+                  ${dateAsdate.toLocaleDateString("en-us",{
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric"
+                  })}
+                </time>
+              </div>
+             
+            </aside>
+            <div class="text-xs">
+              <a href="https://www.medigy.com${aliases}" class="block text-black">
+                ${
+                  categories
+                    ? categories.join(' ')
+                    : ''
+                }
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  }
+
+   async function fetchSearchResults(search){
+    if(search.length === 0) return;
+    //resultsList.innerHTML= SPINNER;
+    //if(!SEARCH_DATA){
+      try {
+            const res = await fetch("/search.json");
+            if(!res.ok){
+              throw new Error("Something went wrong..please try again")
+            }
+            const data = await res.json();
+            SEARCH_DATA = data;
+      } catch (error) {
+        console.log(error)
+      }
+   // }
+   // if(SEARCH_DATA && !FUSE_INSTANCE){
+      const FUSE_INSTANCE = new FUSE(SEARCH_DATA, FUSE_OPTIONS);
+    //}
+    if(!FUSE_INSTANCE) return;
+    const searchResult = FUSE_INSTANCE.search(search);
+    resultsList.innerHTML= 
+      searchResult.length > 0
+      ? generateSearchResults(searchResult)
+      : "<p class='text-lg font-semibold'>No results found...</p>"
+    ;
+
+   }
+
+   //functions
+  //  updateSearchPageUrls(search){
+  //   const url = new URL(window.location.href);
+  //   url.searchParams.set("q",search);
+  //   window.history.replaceState(null,"", url)
+  //  }
+</script>
+<style is:global>
+  main{
+  min-height: 472px !important;
+  }
+</style>
+</Layout>

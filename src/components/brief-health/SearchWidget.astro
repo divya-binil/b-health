@@ -1,0 +1,23 @@
+<aside>
+    <form class="form">
+        <div>
+            <input type="search" min="2" max="24" required placeholder="Search" name="search" id="search">
+        
+        </div>
+    </form>
+</aside>
+<script>
+    //import DOMpurify from "dompurify";
+    const form = document.querySelector("form");
+    form?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const searchTerm = formData.get("search")?.toString();
+        console.log(searchTerm);
+        if(!searchTerm || searchTerm.length === 0) return;
+        const url = new URL("/search", window.location.origin);
+        url.searchParams.set("q", searchTerm);
+        window.location.assign(url.toString());
+
+    });
+</script>

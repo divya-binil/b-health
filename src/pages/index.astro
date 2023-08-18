@@ -43,9 +43,20 @@ briefHealthEntriesInitial.sort((postA, postB) => {
 
 const briefHealthEntries = briefHealthEntriesInitial.slice(0, 12);
 const r = routes(Astro, Astro.props.route);
-
-
+  
 ---
+<!-- <script>
+   const queryParams = new URLSearchParams(window.location.search);
+    const yourQueryParam = queryParams.get('s');
+
+    if (yourQueryParam) {
+      // Query parameter exists
+      console.log('Your query parameter exists:', yourQueryParam);
+    } else {
+      // Query parameter does not exist
+      console.log('Your query parameter does not exist.');
+    }
+</script> -->
 <style>
   .container {
     max-width: revert;
@@ -58,6 +69,7 @@ const r = routes(Astro, Astro.props.route);
     pathTree: exploreTree,
   })}
 >
+
   <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8 mt-6">
     {
       briefHealthEntries.map((briefHealthEntry) => (

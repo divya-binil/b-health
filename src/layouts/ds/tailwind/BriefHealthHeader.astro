@@ -6,10 +6,8 @@ import Modal from "../../../components/brief-health/Modal.astro"
     <div class="flex h-16 justify-left">
       <div class="flex px-2 lg:px-0">
         <div class="flex flex-shrink-0 items-center">
-<a href="/">          <img class="hidden h-10 w-auto lg:block" src="/assets-natural/brand/brief-health/logo.png" alt="Your Company">
-</a>
-      
-          
+          <a href="/"> <img class="hidden h-10 w-auto lg:block" src="/assets-natural/brand/brief-health/logo.png" alt="Your Company">
+          </a>
         </div>
       </div>
       <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
@@ -21,7 +19,11 @@ import Modal from "../../../components/brief-health/Modal.astro"
                 <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
               </svg>
             </div>
-            <input id="searchInput"  name="search" class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search" type="search">
+            <form >
+              <div>
+                <input class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" type="search" min="2" max="24" required placeholder="Search" name="search" id="search">
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -50,4 +52,17 @@ import Modal from "../../../components/brief-health/Modal.astro"
 </nav>
 <!-- Render the modal component -->
 <Modal  />
+<script>
+    //import DOMpurify from "dompurify";
+    const form = document.querySelector("form");
+    form?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const searchTerm = formData.get("search")?.toString();
+        if(!searchTerm || searchTerm.length === 0) return;
+        const url = new URL("/search", window.location.origin);
+        url.searchParams.set("q", searchTerm);
+        window.location.assign(url.toString());
+    });
+</script>
 
